@@ -1,91 +1,74 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=9 format=3 uid="uid://4lt7csnksw46"]
 
-[ext_resource path="res://Vehicles/Vehicle.gd" type="Script" id=1]
-[ext_resource path="res://assets/models/porsche.obj" type="ArrayMesh" id=2]
-[ext_resource path="res://Vehicles/CameraRig.gd" type="Script" id=3]
-[ext_resource path="res://Vehicles/Wheel.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/materials/car_material.material" type="Material" id=5]
+[ext_resource type="Script" path="res://Vehicles/Vehicle.gd" id="1"]
+[ext_resource type="ArrayMesh" uid="uid://brqne11ksrjf7" path="res://assets/models/porsche.obj" id="2"]
+[ext_resource type="Script" path="res://Vehicles/CameraRig.gd" id="3"]
+[ext_resource type="PackedScene" uid="uid://bjbryr66pyd07" path="res://Vehicles/Wheel.tscn" id="4"]
+[ext_resource type="Material" uid="uid://pd8xy33coiu5" path="res://Materials/CarMaterial.material" id="4_iv7gj"]
 
-[sub_resource type="CapsuleShape" id=1]
+[sub_resource type="CapsuleShape3D" id="1"]
 radius = 0.566338
 height = 3.06516
 
-[sub_resource type="CapsuleShape" id=2]
+[sub_resource type="CapsuleShape3D" id="2"]
 radius = 0.376423
 height = 2.94283
 
-[sub_resource type="SphereMesh" id=3]
+[sub_resource type="SphereMesh" id="3"]
 
-[sub_resource type="SpatialMaterial" id=4]
-albedo_color = Color( 1, 0.0862745, 0.815686, 1 )
-
-[sub_resource type="SphereMesh" id=5]
-radial_segments = 4
-rings = 2
-
-[sub_resource type="SpatialMaterial" id=6]
-albedo_color = Color( 0.0705882, 1, 0, 1 )
-
-[node name="Vehicle" type="RigidBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.511051, 0 )
+[node name="Vehicle" type="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.511051, 0)
 mass = 25.0
+center_of_mass_mode = 1
 continuous_cd = true
-script = ExtResource( 1 )
+script = ExtResource("1")
 
-[node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.905362, -0.170863 )
-shape = SubResource( 1 )
+[node name="CollisionShape" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.905362, -0.170863)
+shape = SubResource("1")
 
-[node name="CollisionShape2" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0.895, -0.123 )
-shape = SubResource( 2 )
+[node name="CollisionShape2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.8, 0.895, -0.123)
+shape = SubResource("2")
 
-[node name="CollisionShape3" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0.895, -0.123 )
-shape = SubResource( 2 )
+[node name="CollisionShape3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.8, 0.895, -0.123)
+shape = SubResource("2")
 
-[node name="WheelFL" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.98, 0.99, -1.18 )
+[node name="WheelFL" parent="." instance=ExtResource("4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.98, 0.99, -1.18)
 is_steering = true
 
-[node name="WheelFR" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.98, 0.99, -1.18 )
+[node name="WheelFR" parent="." instance=ExtResource("4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.98, 0.99, -1.18)
 is_right = true
 is_steering = true
 
-[node name="WheelRL" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.98, 0.99, 1.13789 )
+[node name="WheelRL" parent="." instance=ExtResource("4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.98, 0.99, 1.13789)
 is_driving = true
 
-[node name="WheelRR" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.98, 0.99, 1.13789 )
+[node name="WheelRR" parent="." instance=ExtResource("4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.98, 0.99, 1.13789)
 is_right = true
 is_driving = true
 
-[node name="COG_Visualizer" type="MeshInstance" parent="."]
-transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0 )
-mesh = SubResource( 3 )
-material/0 = SubResource( 4 )
+[node name="COG_Visualizer" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+visible = false
+mesh = SubResource("3")
 
-[node name="visualizer" type="MeshInstance" parent="."]
-transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 2.07376, 0 )
-mesh = SubResource( 5 )
-material/0 = SubResource( 6 )
+[node name="Car" type="MeshInstance3D" parent="."]
+mesh = ExtResource("2")
+surface_material_override/0 = ExtResource("4_iv7gj")
 
-[node name="Car" type="MeshInstance" parent="."]
-mesh = ExtResource( 2 )
-material/0 = ExtResource( 5 )
+[node name="CameraRig" type="Marker3D" parent="."]
+script = ExtResource("3")
 
-[node name="CameraRig" type="Position3D" parent="."]
-script = ExtResource( 3 )
+[node name="CameraArm" type="Marker3D" parent="CameraRig"]
+transform = Transform3D(1, 0, 0, 0, 0.766044, 0.642788, 0, -0.642788, 0.766044, 0, 0, 0)
 
-[node name="CameraArm" type="Position3D" parent="CameraRig"]
-transform = Transform( 1, 0, 0, 0, 0.766044, 0.642788, 0, -0.642788, 0.766044, 0, 0, 0 )
-
-[node name="Camera" type="Camera" parent="CameraRig/CameraArm"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 24 )
+[node name="Camera" type="Camera3D" parent="CameraRig/CameraArm"]
+transform = Transform3D(0.294908, 0.102285, -0.950035, -0.6142, 0.781934, -0.106472, 0.731975, 0.614912, 0.293422, -5.01659, -0.340195, 2.27717)
 current = true
 far = 1000.0
-
-[node name="Camera" type="Camera" parent="CameraRig"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 25.9884, 0 )

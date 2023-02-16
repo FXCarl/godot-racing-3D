@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[sub_resource type="ProceduralSky" id=3]
+[sub_resource type="Sky" id=3]
 
 [sub_resource type="Environment" id=4]
 background_mode = 1

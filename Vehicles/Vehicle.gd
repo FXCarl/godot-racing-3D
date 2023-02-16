@@ -1,4 +1,4 @@
-extends RigidBody
+extends RigidBody3D
 
 func _input(event):
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
@@ -21,7 +21,7 @@ func _physics_process(delta):
 
 	# Air resistance
 	var velSquared = linear_velocity.length_squared() * linear_velocity.normalized()
-	add_central_force(-velSquared*0.15)
+	apply_central_force(-velSquared*0.15)
 
 	# tilt body for effect
 	var steering = Input.get_action_strength("left") - Input.get_action_strength("right")
@@ -33,7 +33,7 @@ func _physics_process(delta):
 
 func steer(delta):
 	var steering = Input.get_action_strength("left") - Input.get_action_strength("right")
-	add_torque(Vector3(0,steering*100,0))
+	apply_torque(Vector3(0,steering*100,0))
 
 func kill_orthogonal_velocity():
 	var forward = -global_transform.basis.z 

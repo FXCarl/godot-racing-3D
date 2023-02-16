@@ -1,19 +1,21 @@
 [remap]
 
 importer="wavefront_obj"
+importer_version=1
 type="Mesh"
-path="res://.import/roadCornerLargeWall.obj-5b57675ed970e53703ed9fe8ecd4bec9.mesh"
+uid="uid://h2mh5ty21fnv"
+path="res://.godot/imported/roadCornerLargeWall.obj-5b57675ed970e53703ed9fe8ecd4bec9.mesh"
 
 [deps]
 
-files=[ "res://.import/roadCornerLargeWall.obj-5b57675ed970e53703ed9fe8ecd4bec9.mesh" ]
+files=["res://.godot/imported/roadCornerLargeWall.obj-5b57675ed970e53703ed9fe8ecd4bec9.mesh"]
 
 source_file="res://assets/models/modular/roadCornerLargeWall.obj"
-dest_files=[ "res://.import/roadCornerLargeWall.obj-5b57675ed970e53703ed9fe8ecd4bec9.mesh", "res://.import/roadCornerLargeWall.obj-5b57675ed970e53703ed9fe8ecd4bec9.mesh" ]
+dest_files=["res://.godot/imported/roadCornerLargeWall.obj-5b57675ed970e53703ed9fe8ecd4bec9.mesh", "res://.godot/imported/roadCornerLargeWall.obj-5b57675ed970e53703ed9fe8ecd4bec9.mesh"]
 
 [params]
 
 generate_tangents=true
-scale_mesh=Vector3( 1, 1, 1 )
-offset_mesh=Vector3( 0, 0, 0 )
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
 optimize_mesh=true

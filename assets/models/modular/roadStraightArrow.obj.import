@@ -1,19 +1,21 @@
 [remap]
 
 importer="wavefront_obj"
+importer_version=1
 type="Mesh"
-path="res://.import/roadStraightArrow.obj-e965a493cc167915723b454216b19cb6.mesh"
+uid="uid://buhc5hmnpatkg"
+path="res://.godot/imported/roadStraightArrow.obj-e965a493cc167915723b454216b19cb6.mesh"
 
 [deps]
 
-files=[ "res://.import/roadStraightArrow.obj-e965a493cc167915723b454216b19cb6.mesh" ]
+files=["res://.godot/imported/roadStraightArrow.obj-e965a493cc167915723b454216b19cb6.mesh"]
 
 source_file="res://assets/models/modular/roadStraightArrow.obj"
-dest_files=[ "res://.import/roadStraightArrow.obj-e965a493cc167915723b454216b19cb6.mesh", "res://.import/roadStraightArrow.obj-e965a493cc167915723b454216b19cb6.mesh" ]
+dest_files=["res://.godot/imported/roadStraightArrow.obj-e965a493cc167915723b454216b19cb6.mesh", "res://.godot/imported/roadStraightArrow.obj-e965a493cc167915723b454216b19cb6.mesh"]
 
 [params]
 
 generate_tangents=true
-scale_mesh=Vector3( 1, 1, 1 )
-offset_mesh=Vector3( 0, 0, 0 )
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
 optimize_mesh=true

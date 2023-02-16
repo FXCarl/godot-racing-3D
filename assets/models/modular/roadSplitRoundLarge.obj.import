@@ -1,19 +1,21 @@
 [remap]
 
 importer="wavefront_obj"
+importer_version=1
 type="Mesh"
-path="res://.import/roadSplitRoundLarge.obj-4f795c004a8c7164b33b1283f30fdc39.mesh"
+uid="uid://dx8fluacorxxb"
+path="res://.godot/imported/roadSplitRoundLarge.obj-4f795c004a8c7164b33b1283f30fdc39.mesh"
 
 [deps]
 
-files=[ "res://.import/roadSplitRoundLarge.obj-4f795c004a8c7164b33b1283f30fdc39.mesh" ]
+files=["res://.godot/imported/roadSplitRoundLarge.obj-4f795c004a8c7164b33b1283f30fdc39.mesh"]
 
 source_file="res://assets/models/modular/roadSplitRoundLarge.obj"
-dest_files=[ "res://.import/roadSplitRoundLarge.obj-4f795c004a8c7164b33b1283f30fdc39.mesh", "res://.import/roadSplitRoundLarge.obj-4f795c004a8c7164b33b1283f30fdc39.mesh" ]
+dest_files=["res://.godot/imported/roadSplitRoundLarge.obj-4f795c004a8c7164b33b1283f30fdc39.mesh", "res://.godot/imported/roadSplitRoundLarge.obj-4f795c004a8c7164b33b1283f30fdc39.mesh"]
 
 [params]
 
 generate_tangents=true
-scale_mesh=Vector3( 1, 1, 1 )
-offset_mesh=Vector3( 0, 0, 0 )
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
 optimize_mesh=true

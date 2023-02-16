@@ -1,19 +1,21 @@
 [remap]
 
 importer="wavefront_obj"
+importer_version=1
 type="Mesh"
-path="res://.import/roadCrossing.obj-a4e3c57c9b2465b85ba7e0bb3ec82f01.mesh"
+uid="uid://da1t8p83chju6"
+path="res://.godot/imported/roadCrossing.obj-a4e3c57c9b2465b85ba7e0bb3ec82f01.mesh"
 
 [deps]
 
-files=[ "res://.import/roadCrossing.obj-a4e3c57c9b2465b85ba7e0bb3ec82f01.mesh" ]
+files=["res://.godot/imported/roadCrossing.obj-a4e3c57c9b2465b85ba7e0bb3ec82f01.mesh"]
 
 source_file="res://assets/models/modular/roadCrossing.obj"
-dest_files=[ "res://.import/roadCrossing.obj-a4e3c57c9b2465b85ba7e0bb3ec82f01.mesh", "res://.import/roadCrossing.obj-a4e3c57c9b2465b85ba7e0bb3ec82f01.mesh" ]
+dest_files=["res://.godot/imported/roadCrossing.obj-a4e3c57c9b2465b85ba7e0bb3ec82f01.mesh", "res://.godot/imported/roadCrossing.obj-a4e3c57c9b2465b85ba7e0bb3ec82f01.mesh"]
 
 [params]
 
 generate_tangents=true
-scale_mesh=Vector3( 1, 1, 1 )
-offset_mesh=Vector3( 0, 0, 0 )
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
 optimize_mesh=true

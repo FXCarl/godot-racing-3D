@@ -1,33 +1,33 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=3 uid="uid://bjbryr66pyd07"]
 
-[ext_resource path="res://assets/models/wheel.obj" type="ArrayMesh" id=1]
-[ext_resource path="res://Vehicles/Wheel.gd" type="Script" id=2]
-[ext_resource path="res://Vehicles/TireTrack.tscn" type="PackedScene" id=3]
-[ext_resource path="res://assets/materials/car_material.material" type="Material" id=4]
+[ext_resource type="ArrayMesh" uid="uid://ckr6s8wfvea4a" path="res://assets/models/wheel.obj" id="1"]
+[ext_resource type="Script" path="res://Vehicles/Wheel.gd" id="2"]
+[ext_resource type="PackedScene" uid="uid://cv52b64p4ndh1" path="res://Vehicles/TireTrack.tscn" id="3"]
+[ext_resource type="Material" uid="uid://pd8xy33coiu5" path="res://Materials/CarMaterial.material" id="3_081d1"]
+[ext_resource type="PackedScene" path="res://Vehicles/TrailParticles.tscn" id="5"]
+[ext_resource type="Material" uid="uid://bbcj5pbfo7io5" path="res://Materials/wireframe.material" id="5_3jfte"]
 
-[sub_resource type="CubeMesh" id=1]
+[sub_resource type="BoxMesh" id="1"]
 
-[sub_resource type="SpatialMaterial" id=2]
-albedo_color = Color( 1, 0, 0, 1 )
+[node name="Wheel" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.825, 0.375, -1.425)
+script = ExtResource("2")
 
-[node name="Wheel" type="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.825, 0.375, -1.425 )
-script = ExtResource( 2 )
+[node name="WheelMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000267029, -0.477327, 0.000420094)
+mesh = ExtResource("1")
+surface_material_override/0 = ExtResource("3_081d1")
 
-[node name="WheelMesh" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000267029, -0.477327, 0.000420094 )
-mesh = ExtResource( 1 )
-material/0 = ExtResource( 4 )
+[node name="RayCast" type="RayCast3D" parent="."]
+target_position = Vector3(0, -8, 0)
 
-[node name="RayCast" type="RayCast" parent="."]
-enabled = true
-cast_to = Vector3( 0, -8, 0 )
-
-[node name="CollisionPoint" type="MeshInstance" parent="."]
-transform = Transform( 0.0853553, -0.0146447, 0.05, 0.05, 0.05, -0.0707107, -0.0146447, 0.0853553, 0.05, 0, 0, 0 )
+[node name="CollisionPoint" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0853553, -0.0146447, 0.05, 0.05, 0.05, -0.0707107, -0.0146447, 0.0853553, 0.05, 0, 0, 0)
 visible = false
-mesh = SubResource( 1 )
-material/0 = SubResource( 2 )
+mesh = SubResource("1")
 
-[node name="TireTrack" parent="." instance=ExtResource( 3 )]
+[node name="TireTrack" parent="." instance=ExtResource("3")]
+material = ExtResource("5_3jfte")
+
+[node name="TrailParticles" parent="." instance=ExtResource("5")]
 visible = false

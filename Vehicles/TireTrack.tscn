@@ -1,23 +1,19 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=4 format=3 uid="uid://cv52b64p4ndh1"]
 
-[ext_resource path="res://Vehicles/TireTrack.gd" type="Script" id=1]
+[ext_resource type="Script" path="res://Vehicles/TireTrack.gd" id="1"]
 
-[sub_resource type="Curve" id=1]
-_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+[sub_resource type="Curve" id="1"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
 
-[sub_resource type="SpatialMaterial" id=2]
-albedo_color = Color( 0, 0, 0, 1 )
+[sub_resource type="StandardMaterial3D" id="2"]
+albedo_color = Color(0.39, 0.39, 0.39, 0.388235)
 
-[sub_resource type="SphereMesh" id=3]
+[node name="TireTrack" type="Node3D"]
+script = ExtResource("1")
+width_curve = SubResource("1")
+material = SubResource("2")
 
-[sub_resource type="SpatialMaterial" id=4]
-albedo_color = Color( 1, 0, 0, 1 )
+[node name="Node" type="Node3D" parent="."]
 
-[node name="TireTrack" type="Spatial"]
-script = ExtResource( 1 )
-width_curve = SubResource( 1 )
-material = SubResource( 2 )
-
-[node name="SourceVisualizer" type="MeshInstance" parent="."]
-mesh = SubResource( 3 )
-material/0 = SubResource( 4 )
+[node name="Render" type="MeshInstance3D" parent="Node"]
